@@ -1,0 +1,24 @@
+{
+  "name": "bless-your-eyes",
+  "version": "1.0.0",
+  "description": "Fetches a random doggo pic (With asynchronous Js function)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vhaegar1526/bless-your-eyes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vhaegar1526/bless-your-eyes/issues"
+  },
+  "homepage": "https://github.com/vhaegar1526/bless-your-eyes#readme",
+  "keywords": [],
+  "dependencies": {
+    "popmotion": "^9.1.0",
+    "stylefire": "^7.0.3"
+  }
+}
