@@ -1,11 +1,26 @@
-const { tween } = "./node_modules/popmotion";
-const styler = "./node_modules/stylefire";
+const ball = document.querySelector(".ball");
+const divStyler = popmotion.styler(ball);
+const ballXY = popmotion.value({ x: 0, y: 0 }, divStyler.set);
+
+popmotion.listen(ball, "mousedown touchstart").start((e) => {
+  e.preventDefault();
+  popmotion.pointer(ballXY.get()).start(ballXY);
+});
+
+popmotion.listen(document, "mouseup").start(() => {
+  popmotion
+    .spring({
+      from: ballXY.get(),
+      velocity: ballXY.getVelocity(),
+      to: { x: 0, y: 0 },
+      stiffness: 200,
+    })
+    .start(ballXY);
+});
 
 const DOG_URL = "https://dog.ceo/api/breeds/image/random";
 const btn = document.querySelector(".btn");
 const imgHere = document.querySelector(".img-here");
-const ballElement = document.querySelector(".ball");
-const ball = styler(ballElement);
 
 btn.addEventListener("click", () => {
   fetch(DOG_URL)
